@@ -7,7 +7,7 @@
 
 ---
 
-## Department Data Analysis With Apache Hive 🐝
+## Department Data Analysis With Apache Airflow and Spark
 📝 Gain the skills 
 ---
 
