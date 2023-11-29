@@ -38,17 +38,21 @@
 ## 📙 Project Structures :
 
 - [x] **Project Introduction:**
-- The project aims to perform data analysis using Apache Hive on a telecom dataset to gain insights into customer behavior, churn, and related factors. Telecom companies often face challenges in retaining customers, making it essential to understand the data for informed decision-making.
+- The project leverages Apache Airflow to automate the execution of Spark jobs on Google Cloud's Dataproc, ensuring efficient data processing and management.
+- [x] **Cluster Configuration**
+- The DAG initializes a Dataproc cluster ('airflow') with tailored configurations for optimal performance.Configurations define node counts, machine types, and disk setups.
+- [x] **Dataproc Operators**
+- DataprocCreateClusterOperator: Creates the specified Dataproc cluster based on preset configurations.
+- DataprocSubmitPySparkJobOperator: Submits a PySpark job to the cluster, processing data from 'emp_batch_job.py' in Google Cloud Storage.
+- DataprocDeleteClusterOperator: Ensures cluster deletion post successful job execution for resource optimization.
+- [x] **Workflow**
+- [x] **Cluster Setup:**
+- The DAG triggers Dataproc cluster creation with predefined settings.
+- [x] **Job Execution:**
+- Upon cluster readiness, it submits a PySpark job to process data from 'emp_batch_job.py' in GCS.
+- [x] **Cluster Cleanup:**
+- After job completion, the DAG deletes the cluster, ensuring resource efficiency.
 
-- [x] **Problem Statement:**
-- The telecom dataset contains information about customers, their services, contracts, and churn status. The goal is to analyze this data to answer various questions and gain actionable insights, including but not limited to:
-  - Total number of customers in the dataset.
-  - Number of customers who have churned.
-  - Distribution of customers based on gender and SeniorCitizen status.
-  - Total charge due to churned customers.
-  - Churn analysis based on contract type, average monthly charges, tenure, payment methods, and more.
-  - Performance optimization with joins when integrating demographic data from another dataset.
-  - Advanced analysis, including the distribution of payment methods, churn rates for different InternetService categories, and more.
 
 - [x] **Key Takeaways:**
 - At the end of this project, you will have gained valuable experience in using Apache Hive for data analysis, which can be applied to various business scenarios. Some key takeaways from this project include:
@@ -87,7 +91,7 @@
 
 
 Overview:
-The project leverages Apache Airflow to automate the execution of Spark jobs on Google Cloud's Dataproc, ensuring efficient data processing and management.
+
 
 Key Components:
 
@@ -132,35 +136,11 @@ This project effectively demonstrates how Airflow can be used to automate Spark 
 
 
 
-Project Overview:
-This project merges Apache Airflow's orchestration capabilities with Google Cloud's Dataproc service to automate Spark job execution for streamlined data processing workflows. The integrated solution ensures efficient handling of tasks while leveraging the cloud environment's scalability.
 
-Key Components:
 
-Airflow DAG:
 
-Named 'gcp_dataproc_spark_job,' the DAG orchestrates the Spark job execution on Dataproc.
-It handles the creation, job submission, and deletion of Dataproc clusters.
-Cluster Configuration:
 
-The DAG initializes a Dataproc cluster ('airflow') with tailored configurations for optimal performance.
-Configurations define node counts, machine types, and disk setups.
-Dataproc Operators:
 
-DataprocCreateClusterOperator: Creates the specified Dataproc cluster based on preset configurations.
-DataprocSubmitPySparkJobOperator: Submits a PySpark job to the cluster, processing data from 'emp_batch_job.py' in Google Cloud Storage.
-DataprocDeleteClusterOperator: Ensures cluster deletion post successful job execution for resource optimization.
-Workflow:
-
-Cluster Setup:
-
-The DAG triggers Dataproc cluster creation with predefined settings.
-Job Execution:
-
-Upon cluster readiness, it submits a PySpark job to process data from 'emp_batch_job.py' in GCS.
-Cluster Cleanup:
-
-After job completion, the DAG deletes the cluster, ensuring resource efficiency.
 Project Impact:
 
 Automation: Streamlines tasks, minimizing manual intervention for consistent and reliable data processing.
