@@ -58,7 +58,7 @@
   - Dynamically creates and removes clusters as needed, offering scalability and cost efficiency.
 - Learning and Future Improvements:
   - Demonstrates Airflow's prowess in orchestrating data workflows.
-- [x]**The PySpark script provided processes CSV data by:**
+- [x] **The PySpark script provided processes CSV data by:**
   - Initializing a SparkSession for interaction with Spark.
   - Defining paths for input/output data on Google Cloud Storage (GCS).
   - Reading CSV files into Spark DataFrames with inferred schema and headers.
